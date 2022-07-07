@@ -17,18 +17,40 @@ public class Control2_ex2 {
 		char ch = sc.next().charAt(0);
 		int trans = (int)ch;
 		
+		int numLargeA = (int)'A';
+		int numLargeZ = (int)'Z';
 		int numA = (int)'a';
 		int numZ = (int)'z';
 		int calculation = trans + crypto;
 		char result = ' ';
 		
-		if(calculation >= numA && calculation <= numZ) {
-			result = (char)(calculation);
+		boolean isLargeAlpa = trans >= numLargeA && trans <= numLargeZ ? true : false;
+		
+		if(isLargeAlpa) {
+			if(calculation >= numLargeA && calculation <= numLargeZ) {
+				result = (char)(calculation);
+			} else {
+				result = (char)(calculation - numLargeZ + numLargeA - 1);
+			}
 		} else {
-			result = (char)(calculation - numZ + numA - 1);
+			if(calculation >= numA && calculation <= numZ) {
+				result = (char)(calculation);
+			} else {
+				result = (char)(calculation - numZ + numA - 1);
+			}
 		}
 		
 		System.out.println("암호화된 문자 : " + result);
+		
+		/*if(calculation >= numA && calculation <= numZ) {
+			result = (char)(calculation);
+		} else if(calculation > numZ) {
+			result = (char)(calculation - numZ + numA - 1);
+		} else {
+			System.out.println("알파벳 소문자만 입력해주세요.");
+		}
+		
+		System.out.println("암호화된 문자 : " + result);*/
 		
 		/*for(int i = 65; i <= numZ; i++) {
 			System.out.println((char)i);

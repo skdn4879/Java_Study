@@ -33,6 +33,7 @@ public class Control2_ex2 {
 		/*for(int i = 65; i <= numZ; i++) {
 			System.out.println((char)i);
 		}*/
+		//Test
 	}
 
 }
